@@ -52,7 +52,7 @@ npx bmad-method install --directory /path/to/project --modules bmm --tools codex
 
 [查看所有安装选项](http://docs.bmad-method.org/how-to/non-interactive-installation/)
 
-> **不确定该做什么？** 运行 `/bmad-help`（Codex CLI 使用 `/prompts:bmad-help`）— 它会准确告诉你下一步做什么以及什么是可选的。你也可以问诸如 `/bmad-help 我刚刚完成了架构设计，接下来该做什么？` 之类的问题。
+> **不确定该做什么？** 运行 `/bmad-help`（Codex CLI 使用 `/prompts:bmad-help`）— 它会准确告诉你下一步做什么以及什么是可选的。Codex 会同时安装 `.codex/prompts`（slash 命令）和 `.codex/skills`（原生技能），并安装 `bmad` 路由别名提示（若你的 Codex 版本支持按提示名直接调用，可用 `/bmad`）。
 
 ## 模块
 

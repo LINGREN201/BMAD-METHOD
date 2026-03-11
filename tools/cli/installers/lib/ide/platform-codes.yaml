@@ -71,13 +71,26 @@ platforms:
     installer:
       legacy_targets:
         - .agents/skills
+      # Keep target_dir for detection/backward compatibility; installation uses targets below.
       target_dir: .codex/prompts
       template_type: default
       ancestor_conflict_check: true
-      artifact_types: [agents, workflows, tasks]
-      install_skill_manifest_as_artifacts: true
-      sync_targets:
-        - ~/.codex/prompts
+      targets:
+        # Route 1: Codex slash-command prompts (/prompts:bmad-*)
+        - target_dir: .codex/prompts
+          template_type: default
+          artifact_types: [agents, workflows, tasks]
+          install_skill_manifest_as_artifacts: true
+          install_router_alias: true
+          sync_targets:
+            - ~/.codex/prompts
+        # Route 2: Codex native skills (forward compatibility)
+        - target_dir: .codex/skills
+          template_type: default
+          skill_format: true
+          artifact_types: [agents, workflows, tasks]
+          sync_targets:
+            - ~/.codex/skills
 
   codebuddy:
     name: "CodeBuddy"

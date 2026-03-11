@@ -63,8 +63,9 @@ sidebar:
 
 运行一次 `npx bmad-method install` 交互式安装以查看完整的当前支持工具列表，或查看 [平台代码配置](https://github.com/bmad-code-org/BMAD-METHOD/blob/main/tools/cli/installers/lib/ide/platform-codes.yaml)。
 
-对于 `codex`，BMAD 会把 slash 命令提示文件安装到 `.codex/prompts`，并同步到 `~/.codex/prompts`。
-在 Codex CLI 中用 `/prompts:bmad-help`、`/prompts:bmad-master` 等方式调用。
+对于 `codex`，BMAD 会保留 slash 命令提示文件到 `.codex/prompts`（并同步到 `~/.codex/prompts`），可在 Codex CLI 中用 `/prompts:bmad-help`、`/prompts:bmad-master` 等方式调用。
+同时会写入原生技能到 `.codex/skills`（并同步到 `~/.codex/skills`），用于前向兼容。
+同时会安装一个路由别名提示 `bmad`（文件 `bmad.md`）；如果你的 Codex 版本支持按提示名称直接调用，可直接使用 `/bmad`。
 
 ## 安装模式
 

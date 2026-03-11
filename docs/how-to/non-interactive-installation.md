@@ -63,8 +63,9 @@ Available tool IDs for the `--tools` flag:
 
 Run `npx bmad-method install` interactively once to see the full current list of supported tools, or check the [platform codes configuration](https://github.com/bmad-code-org/BMAD-METHOD/blob/main/tools/cli/installers/lib/ide/platform-codes.yaml).
 
-For `codex`, BMAD installs slash-command prompt files into `.codex/prompts` and syncs them to `~/.codex/prompts`.
-Use them in Codex CLI as `/prompts:bmad-help`, `/prompts:bmad-master`, etc.
+For `codex`, BMAD keeps slash-command prompts in `.codex/prompts` (synced to `~/.codex/prompts`) so you can run `/prompts:bmad-help`, `/prompts:bmad-master`, etc.
+BMAD also writes native skills to `.codex/skills` (synced to `~/.codex/skills`) for forward compatibility.
+BMAD also installs a router alias prompt `bmad` (file `bmad.md`) so you can use `/bmad` when your Codex version supports direct prompt-name slash invocation.
 
 ## Installation Modes
 
